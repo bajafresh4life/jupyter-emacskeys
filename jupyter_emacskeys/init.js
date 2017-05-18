@@ -20,6 +20,13 @@ define([
             cm.setSelection(cm.getCursor(), cm.getCursor());
         };
 
+        // Added by andy
+        delete extraKeys["Alt-V"]; // to allow proper copying and pasting in Linux
+        delete extraKeys["Ctrl-V"]; // to allow proper copying and pasting in Linux
+        delete extraKeys["Ctrl-/"]; // to allow commenting
+        delete extraKeys["Alt-/"];
+        console.log(extraKeys);
+	
         Cell.Cell.options_default.cm_config.extraKeys = extraKeys;
         Cell.Cell.options_default.cm_config.lineWrapping = true;
 
